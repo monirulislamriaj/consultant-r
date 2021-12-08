@@ -1,0 +1,28 @@
+/********** 
+  13. Pricing Section Styles
+**********/
+.pricing {
+  &-wraper {
+    overflow: hidden;
+    .pricing-item-content-secondary {
+      background: none !important;
+      li {
+        svg {
+          circle {
+            opacity: 0.5;
+          }
+          path {
+            fill: $color-white;
+          }
+        }
+        p {
+          color: $color-white !important;
+        }
+      }
+      a {
+        color: $color-white !important;
+        background: rgba($color: $color-white, $alpha: 0.15);
+      }
+    }
+  }
+}

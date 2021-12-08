@@ -1,0 +1,295 @@
+
+/********** 
+  5. Backgrounds Styles
+**********/
+$theme-colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "secondary-dark": $color-secondary-dark,
+  "success": $color-success,
+  "info": $color-info,
+  "warning": $color-warning,
+  "danger": $color-danger,
+  "dark": $color-dark,
+  "white": $color-white
+) !default;
+/**********
+Section Header Styles
+***********/
+.text-primary{
+  color: $color-primary !important;
+}
+.text-secondary{
+  color: $color-secondary !important;
+}
+.bg-primary {
+  background-color: $color-primary !important;
+}
+.bg-secondary {
+  background-color: $color-secondary !important;
+}
+.bg-danger {
+  background-color: $color-danger !important;
+}
+.bg-danger-light {
+  background-color: #ffecef !important;
+}
+
+.bg-info {
+  background-color: #cffff4 !important;
+}
+
+.bg-purple-light {
+  background-color: #ede4ff !important;
+}
+.bg-success-light {
+  background-color: #d8f6ef !important;
+}
+.bg-cyan {
+  background-color: #cffff4 !important;
+}
+.bg-light-green {
+  background-color: #d3f2ec !important;
+}
+.bg-secondary-dark {
+  background-color: $color-secondary-dark !important;
+}
+@mixin section-header(
+  $background,
+  $color: if($background == $color-white, $color-black , $color-white),
+  $color-dark: if($background == $color-white, $color-secondary , $color-white),
+  $color-paragraph: if($background == $color-white, $color-text , $color-white),
+  $color-form: if($background == $color-white, $color-white , $background),
+  $color-border: if($background == $color-white, $color-primary, $color-white ),
+  $color-btn: if($background == $color-white, $color-primary, $color-white ),
+){
+  background:  $background;
+  color: $color;
+  h1,h2,h3,h4,h5,h6{
+    color: $color;
+  }
+  p{
+    color: $color-paragraph;
+  }
+  span{
+    color: $color-dark;
+  }
+  .btn-white{
+    color: $background;
+    &:active , &:focus{
+      color: $background !important;
+    }
+  }
+  svg{
+    z-index: -1;
+    path{
+      stroke: $color-dark;
+      opacity: .75;
+    }
+  }
+  input.form-control{
+    flex: 1;
+  }
+  .btn-light-green{
+    color: $color;
+    background:mix($color-white, $background, 20%);
+    border-color: $background;
+  }
+  .form-control{
+    background-color: $background;
+    border-color: $color-border !important;
+    color:  $color-border ;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:  $color-border ;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:  $color-border ;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:  $color-border ;
+  }
+  .btn-primary{
+    background: $color-btn;
+    color: $background;
+    border-color: $color-border !important;
+    &:active, &:focus {
+      color: $color-primary !important;
+    }
+  }
+}
+
+/**********
+Section Background Styles
+***********/
+@each $color, $value in $theme-colors {
+  .section-bg-#{$color} {
+    @include section-header($value);
+  }
+}
+
+/**********
+Card Bg Styles
+***********/
+@each $color, $value in $theme-colors {
+  .card-bg-#{$color} {
+    @include section-header($value);
+  }
+}
+
+
+/**********
+Badge Override
+***********/
+.badge-default {
+  background-color: $color-black;
+}
+
+/**********
+Badge Soft  Styles
+***********/
+
+.badge-soft-secondary-light {
+  background: #ede4ff;
+  color: #874bff;
+  letter-spacing: 0.3px;
+}
+
+.badge-soft-success-light {
+  background: #d8f6ef;
+  color: #5cd9bc;
+  letter-spacing: 0.3px;
+}
+
+.badge-soft-danger-light {
+  background: #ffecef;
+  color: #ff536e;
+  letter-spacing: 0.3px;
+}
+
+.badge-soft-warning-light {
+  background: #fff1e1;
+  color: #ffaa48;
+  letter-spacing: 0.3px;
+}
+//border colors
+.border-warning {
+  border-color: #ffa438 !important;
+}
+.border-teal {
+  border-color: #8c56ff !important;
+}
+.border-success {
+  border-color: #1cb08d !important;
+}
+.border-danger {
+  border-color: #ff6880 !important;
+}
+/* Alerts */
+/* Alerts */
+@mixin alert(
+  $color,
+  $background: mix($color-white, $color, 70%),
+  $border: 1px solid mix($color-black, $color, 50%)
+){
+  color: mix($color-black, $color, 50%);
+  background-color: $background;
+  border-color:$border;
+}
+@each $color,  $value in $theme-colors {
+  .alert-#{$color}{
+    @include alert($value);
+  }
+}
+/* Tables */
+.table-primary {
+  --bs-table-bg: #d8f6ef;
+  --bs-table-striped-bg: #cdeae3;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #c2ddd7;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c8e4dd;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #c2ddd7;
+}
+.table-secondary {
+  --bs-table-bg: #e9dfff;
+  --bs-table-striped-bg: #ddd4f2;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #d2c9e6;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #d8ceec;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #d2c9e6;
+}
+.table-success {
+  --bs-table-bg: #d2efe8;
+  --bs-table-striped-bg: #c8e3dc;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #bdd7d1;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c2ddd7;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #bdd7d1;
+}
+.table-danger {
+  --bs-table-bg: #ffe1e6;
+  --bs-table-striped-bg: #f2d6db;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #e6cbcf;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #ecd0d5;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #e6cbcf;
+}
+.table-warning {
+  --bs-table-bg: #ffedd7;
+  --bs-table-striped-bg: #f2e1cc;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #e6d5c2;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #ecdbc7;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #e6d5c2;
+}
+.table-info {
+  --bs-table-bg: #f5fffd;
+  --bs-table-striped-bg: #e9f2f0;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #dde6e4;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #e3ecea;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #dde6e4;
+}
+.table-light {
+  --bs-table-bg: #c1a5fe;
+  --bs-table-striped-bg: #b79df1;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #ae95e5;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #b399eb;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #ae95e5;
+}
+.table-dark {
+  --bs-table-bg: #212529;
+  --bs-table-striped-bg: #2c3034;
+  --bs-table-striped-color: #fff;
+  --bs-table-active-bg: #373b3e;
+  --bs-table-active-color: #fff;
+  --bs-table-hover-bg: #323539;
+  --bs-table-hover-color: #fff;
+  color: #fff;
+  border-color: #373b3e;
+}

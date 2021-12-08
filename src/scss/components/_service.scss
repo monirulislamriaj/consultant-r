@@ -1,0 +1,125 @@
+/********** 
+  8. Services Page and Section Styles
+**********/
+.service {
+  &-shape-wrapper {
+    height: 125%;
+    overflow: hidden;
+    top: 20%;
+  }
+  &-shape {
+    position: absolute;
+    width: 1032px;
+    height: 1032px;
+    right: -15%;
+    z-index: -1;
+
+    img {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 500px;
+    }
+  }
+}
+//start services-page
+.services {
+  position: relative;
+
+  &-shape-left {
+    top: 0;
+    left: 0;
+  }
+  &-shape-right {
+    top: 5%;
+    right: 2%;
+  }
+  &-shape-bottom {
+    top: 25%;
+    left: 1%;
+  }
+  &-details {
+    margin-top: -300px;
+    z-index: 111;
+  }
+
+  &-shape-wrapper {
+    overflow: hidden;
+    bottom: 0%;
+  }
+  &-shape {
+    top: 67%;
+    width: 1032px;
+    height: 1032px;
+    right: -15%;
+    z-index: -1;
+
+    img {
+      position: absolute;
+      top: 0%;
+      right: 22%;
+      width: 400px;
+    }
+  }
+  &-item{
+    &.active{
+      box-shadow: $base-box-shadow;
+    }
+  }
+}
+.icon {
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+.content {
+  padding-left: 10px;
+}
+.card-item {
+  outline: none;
+}
+//End services-page
+//Media Querries
+@include media-breakpoint-down-xxl {
+  .services-details {
+    margin-top: -250px;
+  }
+}
+@include media-breakpoint-down-xl {
+  .services-details {
+    margin-top: -100px;
+  }
+  .icon {
+    bottom: -25%;
+    transform: translate(-50%, -25%);
+  }
+}
+@include media-breakpoint-down-lg {
+  .services-details {
+    margin-top: 0px;
+  }
+  .icon {
+    bottom: -22%;
+    transform: translate(-50%, -22%);
+  }
+}
+@include media-breakpoint-down-md {
+  .services-details {
+    margin-top: -75px;
+  }
+  .icon {
+    bottom: -34%;
+    transform: translate(-50%, -34%);
+  }
+}
+@include media-breakpoint-down-sm {
+  .services-details {
+    //margin-top: -0px;
+  }
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.rounded-lg {
+  border-radius: 2.5rem !important;
+}

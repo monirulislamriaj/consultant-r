@@ -1,0 +1,384 @@
+
+/********** 
+  6. Navbar Section Styles
+**********/
+@use "sass:math";
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding-top: 0;
+  padding-right: $base-padding; // default: null
+  padding-bottom: 0;
+  padding-left: $base-padding;// default: null
+  transition: $base-transition;
+  .container-fluid{
+    max-width:1500px;
+  }
+}
+@include media-breakpoint-down-lg {
+  .navbar{
+    padding: $base-padding;;
+    width: 100% !important;
+  }
+}
+@include media-breakpoint-down-sm {
+  .navbar{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+}
+// Navbar brand
+//
+// Used for brand, project, or site names.
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: $base-margin;
+
+}
+//Respnsive MObile View
+@include media-breakpoint-down-sm{
+  .navbar-brand{
+    flex: 1;
+  }
+}
+// Navbar nav
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  .nav-link {
+    padding: $base-padding * 2.5 $base-padding * 1.25 !important;
+    &.active{
+      color: $color-primary;
+    }
+    @include media-breakpoint-down-xl{
+      padding: $base-padding * 2.5 $base-padding !important;
+    }
+    @include media-breakpoint-down-lg{
+      padding: $base-padding * 1.5 0 !important;
+    }
+  }
+  .btn{
+    margin-left: $base-margin;
+    margin-top: $base-margin * 2;
+    @include media-breakpoint-down-lg{
+      margin-top: $base-margin * 0;
+      margin-bottom: $base-margin * 2;
+    }
+  }
+  
+  /*Navbar Dropdow Style 1 */
+  .dropdown{
+    .dropdown-menu {
+      box-sizing: content-box;
+      background: $color-white;
+      border:none;
+      box-shadow: $base-box-shadow;
+      opacity: 0;
+      transform: translate3d(0px, 40px, 0px) scale3d(0.9, 0.9, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      width: 100%;
+      min-width: 250px;
+      position: absolute;
+      display: block;
+      z-index: -900;
+      visibility: hidden;
+      transition: all 300ms ease;
+      border-radius: $base-border-radius;
+    }
+    &-toggle{
+      &:after{
+        content: '\f107';
+        font-family: FontAwesome;
+        font-size: .875rem;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        padding-left: .25rem;
+      }
+    }
+    &-item{
+      margin-bottom: 0;
+    }
+    &:hover{
+      .dropdown-menu {
+        transition: all 300ms ease;
+        width:100%;
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        right: 0px;
+        bottom: auto;
+        min-width: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        z-index: 900;
+      }
+    }
+  }
+  /*Navbar Dropdow Style 2 */
+  .dropdown-v2{
+    .dropdown-menu {
+      box-sizing: content-box;
+      background: $color-white;
+      border:none;
+      box-shadow: $base-box-shadow;
+      opacity: 0;
+      transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      display: block;
+      z-index: -900;
+      visibility: hidden;
+      transition: all 300ms ease;
+      border-radius: $base-border-radius;
+      left:unset;
+      right: 0;
+      border-radius: $base-border-radius;
+      .nav-arrow{
+        position: absolute;
+        top:-10px;
+        right:60px;
+      }
+      &-footer{
+        background-color: $color-gray;
+        text-align: center;
+        padding: $base-padding;
+        p{
+          padding-top: $base-padding;
+          margin:0
+        }
+      }
+    }
+    .megamenu-v2{
+      min-width: 550px;
+      border-radius: $lg-border-radius !important;
+      &-small{
+        left:50%;
+        transform: translate(-50%);
+        right: unset;
+        min-width: 250px;
+        border-radius: $base-border-radius !important;
+        padding: 0 $base-padding * 1.25;
+        .nav-arrow{
+          right:unset;
+          left:50%;
+          transform: translateX(-50%); 
+        }
+      }
+      .dropdown-megamenu{
+        position: relative;
+        display: flex;
+        &-column{
+          display: flex;
+          width: 50%;
+          padding: $base-padding $base-padding * 2 $base-padding * 2;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          &-items{
+            display: flex;
+            align-items: center!important;
+            i,span,svg, img{
+              flex-shrink: 0;
+              width:40px;
+            }
+            a{
+              flex-grow: 1;
+            }
+          }
+        }
+      }
+    }
+    &:hover{
+      .dropdown-menu {
+        left:unset;
+        right: 0;
+        max-height: 100vh;
+        margin-top: 8px;
+        padding-top: $base-padding;
+        width:100%;
+        @include media-breakpoint-down-lg{
+          padding-top: 0;
+        }
+      }
+      .megamenu-v2{
+        min-width: 550px;
+        $border-radius: $lg-border-radius !important;
+        @include media-breakpoint-down-md{
+          min-width:100%;
+        }
+        &-small{
+          left:50%;
+          transform: translate(-50%);
+          right: unset;
+          min-width: 250px;
+          border-radius: $base-border-radius !important;
+          padding: 0 $base-padding * 1.25;
+        }
+      }
+    }
+  }
+  /* Dropdown Menu for Small screen */
+  @include media-breakpoint-down-lg{
+    margin-top: $base-margin * 1.5 !important;
+    .nav-link{
+      margin-bottom: .3rem;
+      position: relative;
+    }
+    .btn{
+      margin-top: $base-margin;
+      margin-bottom: $base-margin;
+    }
+    .dropdown{
+      .dropdown-menu{
+        display: block;
+        border-bottom: 0px solid $color-primary;
+        min-width: 250px;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        top:100%;
+        transform-origin: 0 0 0;
+      }
+      .dropdown-menu.show{
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+        transform-origin: 0 0 0;
+        height: 500px;
+        border-bottom: 5px solid $color-primary;
+        overflow: scroll;
+      }
+      &-toggle{
+        &:after{
+          font-size: 1rem;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #d3f2ec;
+          padding: .3rem .75rem !important;
+        }
+      }
+    }
+  }
+}
+//Sticky Navbar 
+
+.sticky-nav{
+  padding: 0 $base-padding * 2  !important;
+  background: $color-white;
+  transition: $base-transition;
+  .nav-link{
+    padding: $base-padding * 1.5 !important;
+    @include media-breakpoint-down-lg{
+      padding-top: math.div($base-padding, 2);
+      padding-bottom: math.div($base-padding, 2);
+    }
+  }
+  .btn{
+    margin-top: $base-margin;
+  }
+} 
+//Customize style for mobile
+@include media-breakpoint-down-lg {
+  .navbar {
+    background: $color-white;
+  }
+}
+@include media-breakpoint-down-sm {
+  .sticky-nav {
+    padding: $base-padding !important;
+  }
+}
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  background-color: $color-primary; // remove default button style
+  border: $base-border-width solid $color-primary; // remove default button style
+  &:focus{
+    box-shadow: none;
+  }
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-default {
+  display: none;
+}
+.navbar-toggler .navbar-toggler-default {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-toggled {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler .navbar-toggler-toggled {
+  display: none;
+}
+
+
+/* MegaMenu Stle */
+.navbar .megamenu {
+  border-radius: $lg-border-radius!important; 
+}
+.navbar .megamenu >li > ul{ 
+  padding: $base-padding * 3 $base-padding * 2 !important; 
+  a{
+    padding-left: 0 ;
+  }
+}
+.dropdown-megamenu > li{
+  border:none !important;
+  margin-bottom: $base-margin * 2.5;
+}
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	
+	.navbar .has-megamenu{
+    position:static!important;
+  }
+	.navbar .megamenu{
+    left:0; 
+    right:0; 
+    width:100%; 
+    margin-top:0;  
+  }
+	.dropdown-megamenu > li{
+    border:none !important;
+    margin-bottom: 0;
+  }
+}	
+/* ============ desktop view .end// ============ */
+
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+	.navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+		overflow-y: auto;
+	  max-height: 90vh;
+	  margin-top:10px;
+	}
+}
+/* ============ mobile view .end// ============ */
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: $color-primary;
+  background-color: transparent;
+}

@@ -1,0 +1,152 @@
+/********** 
+  4. Button Styles
+**********/
+.btn{
+  font-weight: $medium-font-weight;
+  letter-spacing: $base-letter-spacing;
+  border: none;
+  padding: $base-padding * 0.8  $base-padding * 2;
+  transition: $base-transition !important;
+  &:hover {
+    color: $color-white;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    color: $color-white !important;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    color: $color-white !important;
+    box-shadow: none;
+    &:focus {
+      color: $color-white !important;
+      box-shadow: none;
+    }
+  }
+  &-primary {
+    color: $color-white;
+    background: $color-primary;
+    &:hover {
+      background-color: lighten($color-primary, 10%);
+    }
+  }
+  &-white {
+    color: $color-primary;
+    background: $color-white;
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary;
+    }
+  }
+  &-secondary {
+    color: $color-secondary;
+    background: rgba($color: $color-secondary-dark, $alpha: 0.15);
+    &:hover {
+      color: $color-secondary;
+      background: rgba($color: $color-secondary-dark, $alpha: 0.5);
+    }
+    .btn-check:focus + &,
+    &:focus {
+      color: $color-white;
+      background: $color-secondary;
+    }
+  }
+  &-light-green {
+    color: $color-primary;
+    background-color: $color-info;
+    border-color: $color-info;
+    &:hover {
+      color: $color-white;
+      background: $color-primary;
+    }
+    .btn-check:focus + &,
+    &:focus {
+      color: $color-white;
+      background: $color-primary;
+    }
+  }
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg, .btn-group-lg > .btn {
+  padding: $base-padding $base-padding * 2.5;
+  font-size: $base-font-size;
+  border-radius: $base-border-radius;
+}
+.btn-sm, .btn-group-sm > .btn {
+  padding: $base-padding * 0.5 $base-padding * 0.7;
+  font-size: $base-font-size;
+  border-radius: $base-border-radius;
+}
+
+.btn-link{
+  text-decoration: underline;
+  &:hover{
+    color: $color-primary;
+  }
+}
+
+/* Button Close Style */
+.btn-close{
+  margin-top: $base-margin 0.5;
+  margin-right: $base-margin;
+  &:focus{
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: inherit;
+  outline: 0;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  color: $color-white;
+  background-color: $color-primary;
+}
+.btn-outline-primary {
+  color: $color-primary;
+  border: 1px solid currentColor;
+}
+.btn-outline-secondary {
+  color: $color-secondary;
+  border: 1px solid currentColor;
+}
+.btn-outline-success {
+  color: $color-success;
+  border: 1px solid currentColor;
+}
+.btn-outline-danger {
+  color: $color-danger;
+  border: 1px solid currentColor;
+}
+.btn-outline-warning {
+  color: $color-warning;
+  border: 1px solid currentColor;
+}
+.btn-outline-dark {
+  color: $color-dark;
+  border: 1px solid currentColor;
+}
+
+/* Button Close Style */
+.btn-close {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+.btn-close:focus {
+  outline: 0;
+  box-shadow: none;
+}

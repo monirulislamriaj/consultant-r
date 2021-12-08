@@ -1,0 +1,210 @@
+<!--
+  #############
+  Navbar Version 2 Area
+  #############
+-->
+
+<header>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg position-fixed w-100 zindex-dropdown" id="navigationBar">
+    <div class="container-fluid position-relative">
+      <!--Navbar Brand-->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.svg" alt="" class="w-md-100 w-75">
+      </a>
+      <!--Navbar Toggler-->
+      <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-default">
+          <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path fill="white"
+              d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z">
+            </path>
+          </svg>
+        </span>
+        <span class="navbar-toggler-toggled">
+          <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path fill="white" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"></path>
+        </svg>
+        </span>
+      </button>
+      <!--Navbar Menus Collapse-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav ms-auto ">
+
+          <li class="nav-item dropdown dropdown-v2">
+            <a href="index.html" class="nav-link @@if(nav == 'home'){active}  "  >Home</a>
+          </li>
+
+          <li class="nav-item ">
+            <a href="about.html" class="nav-link @@if(nav == 'about'){active}" >About</a>
+            
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link @@if(nav == 'service'){active}" href="services.html">
+              Services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link @@if(nav == 'blog'){active}" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link @@if(nav == 'contact'){active}" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item dropdown dropdown-v2 ">
+            <a class="nav-link  dropdown-toggle @@if(nav == 'elements'){active}" href="elements.html"  role="button" data-bs-toggle="dropdown" >Elements</a>
+            <ul class="dropdown-menu megamenu-v2" >
+              <li>
+                <ul class="row list-unstyled dropdown-megamenu ">
+                  <li class="dropdown-megamenu-column">
+                    <h4>Elements</h4>
+                    <ul class="list-unstyled">
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.2" width="68" height="68" rx="26" fill="#3AD2AE"/>
+                          <path opacity="0.6" d="M47 37.3333V20L21 30.6667V48L47 37.3333Z" fill="#01A473"/>
+                          <path opacity="0.6" d="M47 30.6667V48L21 37.3333V20L47 30.6667Z" fill="#01A473"/>
+                        </svg>
+                        <a href="accordion.html" class="dropdown-item" >Accordions</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#FFF1E1"/>
+                          <path d="M23 48L23 42C23 29.8497 32.8497 20 45 20L45 48L23 48Z" fill="#FF7E21" fill-opacity="0.5"/>
+                          <path d="M45 48L45 42C45 29.8497 35.1503 20 23 20L23 48L45 48Z" fill="#FF7E21" fill-opacity="0.5"/>
+                        </svg>                                               
+                        <a href="alerts.html" class="dropdown-item " >Alerts</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#FFECEF"/>
+                          <path d="M48 20L20 48H48V20Z" fill="#FF2459" fill-opacity="0.5"/>
+                          <circle cx="34" cy="34" r="10" fill="#FF2459" fill-opacity="0.5"/>
+                        </svg>
+                        <a href="badge.html" class="dropdown-item " >Badges</a>
+                      </li>
+                      <li  class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#FFF1E1"/>
+                          <path d="M23 48L23 42C23 29.8497 32.8497 20 45 20L45 48L23 48Z" fill="#FF7E21" fill-opacity="0.5"/>
+                          <path d="M45 48L45 42C45 29.8497 35.1503 20 23 20L23 48L45 48Z" fill="#FF7E21" fill-opacity="0.5"/>
+                        </svg>                        
+                        <a href="button.html" class="dropdown-item " >Buttons</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.2" width="68" height="68" rx="26" fill="#3AD2AE"/>
+                          <path opacity="0.6" d="M47 37.3333V20L21 30.6667V48L47 37.3333Z" fill="#01A473"/>
+                          <path opacity="0.6" d="M47 30.6667V48L21 37.3333V20L47 30.6667Z" fill="#01A473"/>
+                        </svg>
+                        <a href="card.html" class="dropdown-item" >Card</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#EDE4FF"/>
+                          <circle cx="36.5" cy="36.5" r="11.5" fill="#8145FF" fill-opacity="0.5"/>
+                          <rect x="20" y="20" width="18" height="18" fill="#8145FF" fill-opacity="0.5"/>
+                        </svg>    
+                        <a href="form.html" class="dropdown-item" >Forms</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.2" width="68" height="68" rx="26" fill="#3AD2AE"/>
+                          <path opacity="0.6" d="M47 37.3333V20L21 30.6667V48L47 37.3333Z" fill="#01A473"/>
+                          <path opacity="0.6" d="M47 30.6667V48L21 37.3333V20L47 30.6667Z" fill="#01A473"/>
+                        </svg>
+                        <a href="pagination.html" class="dropdown-item" >Pagination</a>
+                      </li>
+                    </ul>
+                  </li>
+  
+                  <li class="dropdown-megamenu-column">
+                    <h4>Elements</h4>
+                    <ul class="list-unstyled">
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#EDE4FF"/>
+                          <circle cx="36.5" cy="36.5" r="11.5" fill="#8145FF" fill-opacity="0.5"/>
+                          <rect x="20" y="20" width="18" height="18" fill="#8145FF" fill-opacity="0.5"/>
+                        </svg>    
+                        <a href="modal.html" class="dropdown-item" >Modals</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#FFECEF"/>
+                          <path d="M48 20L20 48H48V20Z" fill="#FF2459" fill-opacity="0.5"/>
+                          <circle cx="34" cy="34" r="10" fill="#FF2459" fill-opacity="0.5"/>
+                        </svg>
+                        <a href="navbar-style.html" class="dropdown-item" >Navbars</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.2" width="68" height="68" rx="26" fill="#3AD2AE"/>
+                          <path opacity="0.6" d="M47 37.3333V20L21 30.6667V48L47 37.3333Z" fill="#01A473"/>
+                          <path opacity="0.6" d="M47 30.6667V48L21 37.3333V20L47 30.6667Z" fill="#01A473"/>
+                        </svg>
+                        <a href="tabs.html" class="dropdown-item" >Tabs</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#EDE4FF"/>
+                          <circle cx="36.5" cy="36.5" r="11.5" fill="#8145FF" fill-opacity="0.5"/>
+                          <rect x="20" y="20" width="18" height="18" fill="#8145FF" fill-opacity="0.5"/>
+                        </svg>    
+                        <a href="tables.html" class="dropdown-item" >Tables</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect opacity="0.2" width="68" height="68" rx="26" fill="#3AD2AE"/>
+                          <path opacity="0.6" d="M47 37.3333V20L21 30.6667V48L47 37.3333Z" fill="#01A473"/>
+                          <path opacity="0.6" d="M47 30.6667V48L21 37.3333V20L47 30.6667Z" fill="#01A473"/>
+                        </svg>
+                        <a href="teams.html" class="dropdown-item" >Teams</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#FFECEF"/>
+                          <path d="M48 20L20 48H48V20Z" fill="#FF2459" fill-opacity="0.5"/>
+                          <circle cx="34" cy="34" r="10" fill="#FF2459" fill-opacity="0.5"/>
+                        </svg>
+                        <a href="testimonials.html" class="dropdown-item" >Testimonials</a>
+                      </li>
+                      <li class="dropdown-megamenu-column-items"> 
+                        <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="68" height="68" rx="26" fill="#EDE4FF"/>
+                          <circle cx="36.5" cy="36.5" r="11.5" fill="#8145FF" fill-opacity="0.5"/>
+                          <rect x="20" y="20" width="18" height="18" fill="#8145FF" fill-opacity="0.5"/>
+                        </svg>                        
+                        <a href="video.html" class="dropdown-item " >Video</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="dropdown-menu-footer list-unstyled">
+                  <li>
+                    <a href="#"><img src="images/logo.svg" alt="logo"></a>
+                    <p><span class="text-primary fw-medium">4.5 out of 5</span> based on 2000+ reviews</p>
+                  </li>
+                </ul>
+              </li>
+              <li><img src="images/arrowUp.svg" alt="arrow" class="nav-arrow"></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class=" btn btn-sm btn-light-green ms-lg-3 ms-0" href="getstart.html" tabindex="-1"
+              aria-disabled="true">Get Started</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--
+  #############
+  End of  Navbar Versions 2 Area
+  #############
+-->

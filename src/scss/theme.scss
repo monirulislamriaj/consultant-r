@@ -1,0 +1,53 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+PROJECT:	Consultant
+-------------------------------------------------------------------*/
+/* ====== index =====
+1.  Default Styles
+2.  Container and Width Styles
+3.  Spacer Styles
+4.  Button Styles
+5.  Backgrounds Styles
+6.  Navbar Section Styles
+7.  Hero Section Styles
+8.  Services Page and Section Styles
+9.  About page and Section Styles
+10. Testimonial Section Styles
+11. Contact Page Styles
+12. Team Section Styles
+13. Pricing Section Styles
+14. Blog Page Styles
+15. Get Start Page Styles
+16. Taxonomy Page Styles
+17. Terms and condition Page Styles
+18. Pagination Section Styles
+18. Elements Page Styles
+
+
+===================== */
+
+
+@import "variables";
+@import "mixins";
+@import "root";
+@import "buttons";
+@import "containers";
+@import "spacer";
+@import "backgrounds";
+@import "components/navbar";
+@import "components/hero";
+@import "components/service";
+@import "components/about";
+@import "components/testimonial";
+@import "components/contact";
+@import "components/team";
+@import "components/pricing";
+@import "components/blog";
+@import "components/getstart";
+@import "components/taxonomy";
+@import "components/terms-privacy";
+@import "components/pagination";
+@import "components/elements";
+
+// @import "components/sections/elements";
+

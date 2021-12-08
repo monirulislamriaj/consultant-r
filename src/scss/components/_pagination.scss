@@ -1,0 +1,44 @@
+/********** 
+  18. Pagination Section Styles 
+**********/
+@use "sass:math";
+.page-link {
+  color: $color-secondary;
+  background-color: $color-white;
+  border: none;
+  padding: $base-padding * 0.5 $base-padding * 1.1;
+  border-radius: 6px;
+  font-weight: $medium-font-weight;
+  
+  &:hover {
+    z-index: 2;
+    color: $color-secondary;
+    background-color: lighten($color-secondary, 25%);
+    border-color: lighten($color-secondary, 25%);
+  }
+
+  &:focus {
+    z-index: 3;
+    color: $color-secondary;
+    background-color: $color-white;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.page-item {
+  margin-right: math.div($base-margin , 2) ;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:not(:first-child) .page-link {
+    margin-left: 0;
+  }
+
+  &.active .page-link {
+    z-index: 3;
+    color: $color-secondary;
+    background: lighten($color-secondary, 25%);
+    border-color: lighten($color-secondary, 25%);
+  }
+}

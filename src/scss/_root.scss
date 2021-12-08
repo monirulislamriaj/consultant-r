@@ -1,0 +1,447 @@
+
+/********** 
+ 1. Default  Styles 
+**********/
+@use "sass:math";
+
+/*Font */
+body {
+  font-family: $font-primary;
+  font-size: $base-font-size;
+  font-weight: $regular-font-weight;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-gray;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: $font-primary;
+  font-weight: $semibold-font-weight;
+  line-height: 1.2;
+  color: $color-header;
+}
+
+h1, .h1 {
+  font-size: calc( $base-font-size * 1.56 + 3.72vw);
+  font-weight: $bold-font-weight;
+  @include media-breakpoint-up-xl{
+    font-size: $base-font-size * 4.35;
+  }
+}
+
+
+h2, .h2 {
+  font-size: calc( $base-font-size * 1.45 + 2.4vw);
+  @include media-breakpoint-up-xl{
+    font-size: $base-font-size * 3.25;
+  }
+}
+
+h3, .h3 {
+  font-size: calc($base-font-size * 1.275 + 0.3vw);
+  @include media-breakpoint-up-xl{
+    font-size: $base-font-size * 1.5;
+  }
+}
+
+h4, .h4 {
+  font-size: $base-font-size * 1.25;
+}
+
+h5, .h5 {
+  font-size: $base-font-size * 1;
+}
+
+h6, .h6 {
+  font-size: $base-font-size * 1;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $base-margin;
+  color: $color-text;
+  font-size: $base-font-size ;
+  font-family: $font-secondary;
+}
+a {
+  color: $color-black;
+  text-decoration: none;
+  display: inline-block;
+  transition: $base-transition;
+    &:hover {
+    color: $color-primary;
+  }
+}
+/* Key Frames */
+
+@keyframes leftToright {
+  from{
+    transform: translate(-10px);
+    transform-origin: center;
+    transform-style: preserve-3d;
+  }
+  to{
+    transform: translateX(10px);
+    transform-origin: center;
+    ransform-style: preserve-3d;
+  }
+  
+}
+/********** Circle on Banner Styles ***********/
+//Circle images
+
+.circle {
+  position: relative;
+  min-height: 800px;
+  max-height: 800px;
+  overflow: hidden;
+  z-index: -1;
+  &-shape {
+    &:nth-child(2n) {
+      img {
+        position: absolute !important;
+        box-shadow: 0px 20px 60px rgba(50, 61, 88, 0.09);
+        border-radius: 50%;
+        &:nth-child(4n + 1) {
+          bottom: 30%;
+          top: unset !important;
+          left: 0% !important;
+        }
+        &:nth-child(4n + 2) {
+          bottom: 30%;
+          top: unset !important;
+          right: 0% !important;
+        }
+      }
+    }
+    &:nth-child(3n) {
+      img {
+        position: absolute !important;
+        box-shadow: 0px 20px 60px rgba(50, 61, 88, 0.09);
+        border-radius: 50%;
+        &:nth-child(4n + 1) {
+          bottom: 20%;
+          top: unset !important;
+          left: 6% !important;
+        }
+        &:nth-child(4n + 2) {
+          bottom: 20%;
+          top: unset !important;
+          right: 6% !important;
+        }
+        &:nth-child(4n + 3) {
+          bottom: 5%;
+          top: unset !important;
+          left: 20% !important;
+        }
+        &:nth-child(4n + 4) {
+          bottom: 5%;
+          top: unset !important;
+          right: 20% !important;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down-xxl {
+  .hero-home{
+    .circle {
+      min-height: 670px;
+    }
+  }
+  .circle{
+    &-shape{
+      &:nth-child(3n){
+        img{
+          &:nth-child(4n+1){
+            left: 4%;
+          }
+          &:nth-child(4n+2){
+            right: 4%;
+          }
+          &:nth-child(4n+3){
+            bottom: 4%;
+          }
+          &:nth-child(4n+4){
+            bottom: 4%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down-xl { 
+  .circle{
+    min-height: 600px;
+    &-shape{
+      &:nth-child(2n){
+        img{
+          &:nth-child(4n+1){
+            bottom: 25%;
+          }
+          &:nth-child(4n+2){
+            bottom: 25%;
+          }
+        }
+      }
+      &:nth-child(3n){
+        img{
+          &:nth-child(4n+1){
+            left: 3% !important;
+            width:60px;
+          }
+          &:nth-child(4n+2){
+            right: 3% !important;
+            width:60px;
+          }
+          &:nth-child(4n+3){
+            bottom: 3%;
+            width:80px;
+          }
+          &:nth-child(4n+4){
+            bottom: 3%;
+            width:80px;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down-lg { 
+  .circle {
+    min-height: 600px;
+  }
+}
+@include media-breakpoint-down-md { 
+  .cercle {
+    min-height: 500px;
+  }
+}
+
+/**********
+// scss-docs-start large Rounded Shape Background
+***********/
+.bg-shape{
+  &-wrapper{
+    height: 125%;
+    overflow: hidden;
+    top: 20%;
+    z-index: -1;
+  }
+  &-item{
+    position: absolute;
+    width: 1032px;
+    height: 1032px;
+    z-index: -1;
+    img{
+      position:absolute;
+      width:500px;
+    }
+    &.bg-secondary{
+      right:-15%;
+      img{
+        top:30%;
+        left:0
+      }
+    }
+    &.bg-primary{
+      left:-15%;
+      img{
+        top:20%;
+        right:0
+      }
+    }
+    
+  }
+}
+
+/* caret */
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0;
+  vertical-align: 0;
+  content: "";
+  border-top: none;
+  border-right: none;
+  border-bottom: 0;
+  border-left: none;
+}
+/*  Cards */
+.card {
+  border-radius: $lg-border-radius;
+  box-shadow:$base-box-shadow;
+  border: none;
+  padding: $base-padding; 
+}
+
+/* Shadows */
+.shadow{
+  box-shadow: $base-box-shadow !important;
+}
+.shadow-none {
+  box-shadow: none !important;
+}
+/* Border radius */
+.rounded-3 {
+  border-radius: 1.75rem !important;
+}
+.rounded-4 {
+  border-radius: 1.125rem !important;
+}
+.rounded-circle{
+  border-radius: 50% !important;
+}
+/* font-sizes */
+.fs-1 {
+  font-size: $base-font-size * 4.35 !important;
+}
+.fs-2 {
+  font-size: $base-font-size * 3.25 !important;
+}
+.fs-4 {
+  font-size: $base-font-size * 1.25 !important;
+}
+.fs-7 {
+  font-size: $base-font-size * 2.25 !important;
+}
+/* letter-spacings */
+.ls {
+  letter-spacing: normal !important;
+}
+
+.ls-sm {
+  letter-spacing: 2px !important;
+}
+
+.ls-md {
+  letter-spacing: 4px !important;
+}
+
+.ls-lg {
+  letter-spacing: 5px !important;
+}
+
+/* font-weights */
+.fw-normal {
+  font-weight: $regular-font-weight !important;
+}
+
+.fw-medium {
+  font-weight: $medium-font-weight !important;
+}
+
+.fw-semi-bold {
+  font-weight: $semibold-font-weight !important;
+}
+
+.fw-bold {
+  font-weight: $bold-font-weight !important;
+}
+
+/* badges */
+.badge {
+  display: inline-block;
+  padding: 0.625em 1.2em;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.35rem;
+}
+
+/* SLick Dots Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: $color-secondary;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: $color-secondary;
+}
+

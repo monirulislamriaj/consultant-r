@@ -1,0 +1,16 @@
+/********** 
+  7. Hero Section Styles
+**********/
+.hero {
+  width: 100%;
+  //min-height: 800px;
+  position: relative;
+  overflow: hidden;
+  &-wrapper {
+    transform: translate(-50%, -50%);
+  }
+
+}
+.hero-services {
+  overflow: hidden;
+}

@@ -1,0 +1,59 @@
+/********** 
+  17. Terms and condition Page Styles
+**********/
+.terms-details{
+  margin-top: -300px;
+  &-content{
+    h2{
+      font-size: 1.875rem;
+      margin-bottom: 1.5rem;
+    }
+    p{
+      line-height: 170%;
+      margin-bottom: 2rem;
+    }
+    ul{
+      margin: 3rem 0;
+      li{
+        padding-left: $base-padding * 2.5;
+        margin-bottom: $base-margin;
+        position: relative;
+        span{
+          line-height: 170%;
+        }
+        &:before{
+          position: absolute;
+          content: '';
+          width: $base-padding;
+          height: $base-padding;
+          background: $color-secondary;
+          border-radius: 100%;
+          left:0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down-xxl {
+  .terms-details {
+    margin-top: -250px;
+  }
+}
+@include media-breakpoint-down-xl {
+  .terms-details {
+    margin-top: -100px;
+  }
+}
+@include media-breakpoint-down-lg {
+  .terms-details {
+    margin-top: 0px;
+  }
+}
+@include media-breakpoint-down-md {
+  .terms-details {
+    margin-top: -75px;
+  }
+}

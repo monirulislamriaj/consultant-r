@@ -1,0 +1,87 @@
+/********** 
+  18. Elements Page Styles 
+**********/
+//Element Styles 
+.elements{
+  .card{
+    margin-bottom: $base-margin * 2;
+  }
+  h1{
+    font-size: 3.5rem;
+  }
+  &-card{
+    transition: $base-transition;
+    &:hover{
+      box-shadow: 0px 40px 60px rgba(50, 61, 88, .2);
+    }
+  }
+}
+
+//Accordion Styles
+.section-bg-primary .accordion-button:not(.collapsed) {
+  border-bottom: 1px solid $color-white;
+  box-shadow: none;
+}
+
+/********** 
+  Form Styles 
+**********/
+.form-check{
+  &-input{
+    width: 1.5em;
+    height: 1.5em;
+  }
+  label{
+    padding-top: 4px;
+    padding-left: 8px;
+  }
+}
+.form-switch {
+  .form-check-input{
+    width:2.5rem;
+  }
+}
+/* Nav tab */
+
+.nav-tabs {
+  border-bottom: 3px solid $color-primary;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-pills .nav-link.active, .nav-pills .show>.nav-link  {
+  color: $color-white;
+  background-color: $color-primary;
+  border-color:  $color-primary;
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color:  transparent;
+  isolation: isolate;
+}
+
+/* Pre ELements*/
+pre[class*="language-"] {
+  margin: 0;
+}
+
+//code styles
+code {
+  font-size: 0.875em;
+  color: #ffecef;
+  word-wrap: break-word;
+}
+span.highlight {
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  padding: 0.25rem 1rem;
+  border-radius: 0.35rem;
+}
+
+// ELements form styles
+.form-check-input:checked {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+
+.form-check-input:focus {
+  border-color: $color-primary;
+  box-shadow: 0 0 0 0.25rem rgba(58, 210, 174, .25);
+}

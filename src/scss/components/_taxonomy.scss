@@ -1,0 +1,19 @@
+/********** 
+  16. Taxonomy Page Styles
+**********/
+ .taxonomy{
+   margin-top: -350px;
+  .services-shape {
+    top: 10%;
+  }
+ }
+ @include media-breakpoint-down-xl{
+  .taxonomy{
+    margin-top: -250px;
+  }
+ }
+ @include media-breakpoint-down-lg{
+  .taxonomy{
+    margin-top: -125px;
+  }
+ }
